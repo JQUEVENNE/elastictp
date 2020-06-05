@@ -1,12 +1,80 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>tpelastic</title>
+
+    {% block stylesheets %}
+
+    {% endblock %}
+
+
+</head>
+
+<body id="{% block body_id %}{% endblock %}">
+
+{% block header %}
+    <header>
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header col-md-3 col-lg-2">
+                    <a class="navbar-brand" href="{{ path('homepage') }}">
+
+                    </a>
+
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+
+
+                        <li>
+                            <a href="{{ path('movie_search') }}"> <i class="fa fa-search"></i> {{ 'menu.search'|trans }}</a>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+<div class="container body-container">
+    {% block body %}
+        <div class="row">
+            <form method="POST" >
+                <table>
+                    <tr>
+                        <td>Acteur : </td>
+                        <td>
+                            <input name="actor" value="{{ actor }}"/>
+                        </td>
+                    </tr>
+                    <td>Thème : </td>
+                    <td>
+                        <input name="theme" value="{{ theme }}"/>
+                    </td>
+                    </tr>
+                    <tr><td><button name='submit'>Rechercher</button></td></tr>
+                </table>
+            </form>
+        </div>
+    {% endblock %}
+</div>
+
+{% block footer %}
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
+
+</body>
 </html>

@@ -17,7 +17,8 @@
         "symfony/http-client": "5.1.*",
         "symfony/twig-pack": "^1.0",
         "symfony/var-dumper": "5.1.*",
-        "symfony/yaml": "5.1.*"
+        "symfony/yaml": "5.1.*",
+      "ext-http": "*"
     },
     "require-dev": {
     },
